@@ -25,7 +25,7 @@ export async function onRequestPost(context) {
         let apiEndpoint;
         if (uploadFile.type.startsWith('image/')) {
             telegramFormData.append("photo", uploadFile);
-            apiEndpoint = 'sendPhoto';
+            apiEndpoint = 'sendDocument';
         } else if (uploadFile.type.startsWith('audio/')) {
             telegramFormData.append("audio", uploadFile);
             apiEndpoint = 'sendAudio';
