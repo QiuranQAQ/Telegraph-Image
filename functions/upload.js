@@ -111,7 +111,7 @@ async function sendToTelegram(formData, apiEndpoint, env, retryCount = 0) {
         }
 
         // 图片上传失败时转为文档方式重试
-        if (retryCount < MAX_RETRIES && apiEndpoint === 'sendPhoto') {
+        if (retryCount < MAX_RETRIES && apiEndpoint === 'sendDocument') {
             console.log('Retrying image as document...');
             const newFormData = new FormData();
             newFormData.append('chat_id', formData.get('chat_id'));
