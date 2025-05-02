@@ -31,7 +31,7 @@ export async function onRequestPost(context) {
             apiEndpoint = 'sendAudio';
         } else if (uploadFile.type.startsWith('video/')) {
             telegramFormData.append("video", uploadFile);
-            apiEndpoint = 'sendDocument';
+            apiEndpoint = 'sendVideo';
         } else {
             telegramFormData.append("document", uploadFile);
             apiEndpoint = 'sendDocument';
